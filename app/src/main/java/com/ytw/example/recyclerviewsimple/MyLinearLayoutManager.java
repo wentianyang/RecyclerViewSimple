@@ -37,18 +37,18 @@ public class MyLinearLayoutManager extends LinearLayoutManager {
     final int over = dy - scrolled;
     if (over < 0) {
       //过度下滑
-      myRecyclerView.headView.getLayoutParams().height = myRecyclerView.headView.getHeight() - over;
-      myRecyclerView.headView.requestLayout();
+      //myRecyclerView.headView.getLayoutParams().height = myRecyclerView.headView.getHeight() - over;
+      //myRecyclerView.headView.requestLayout();
     } else if (over > 0) {
       //过度上滑
     } else {
       //正常滑动
       if (dy > 0) {
-        if (myRecyclerView.headView.getHeight() > myRecyclerView.originHeight) {
-          myRecyclerView.headView.getLayoutParams().height =
-              myRecyclerView.headView.getHeight() - dy;
-          myRecyclerView.headView.requestLayout();
-        }
+        //if (myRecyclerView.headView.getHeight() > myRecyclerView.originHeight) {
+        //  myRecyclerView.headView.getLayoutParams().height =
+        //      myRecyclerView.headView.getHeight() - dy;
+        //  myRecyclerView.headView.requestLayout();
+        //}
       }
     }
     return scrolled;

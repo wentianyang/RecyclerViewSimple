@@ -1,5 +1,6 @@
 package com.ytw.example.recyclerviewsimple;
 
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,9 +14,9 @@ import java.util.List;
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
-  private List<String> mData;
+  private List<Item> mData;
 
-  public MyAdapter(List<String> data) {
+  public MyAdapter(List<Item> data) {
     this.mData = data;
   }
 
@@ -26,7 +27,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
   }
 
   @Override public void onBindViewHolder(MyViewHolder holder, int position) {
-    holder.mTextView.setText(mData.get(position));
+    holder.mTextView.setText(mData.get(position).content);
+    holder.mTextView.setBackgroundColor(Color.parseColor(mData.get(position).color));
   }
 
   @Override public int getItemCount() {
